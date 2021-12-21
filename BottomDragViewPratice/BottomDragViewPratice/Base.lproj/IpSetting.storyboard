@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Subnet Mask Modal View Controller-->
+        <scene sceneID="9UT-23-7vw">
+            <objects>
+                <viewController id="Yf8-id-AKR" customClass="SubnetMaskModalViewController" customModule="BottomDragViewPratice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D73-Ug-m9h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTg-OL-Xx4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="342"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ymv-b7-dME" appends="YES" id="R7P-4K-uVZ"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjg-Xg-Mhy" customClass="DragView" customModule="BottomDragViewPratice" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="320" width="320" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="IQo-jm-RkK"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aq9-Xm-YKz">
+                                <rect key="frame" x="0.0" y="386" width="320" height="182"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" hidden="YES" contentMode="scaleToFill" id="GGg-kB-5d0">
+                                    <rect key="frame" x="0.0" y="92.500000346790671" width="320" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BasicCell" textLabel="1Pk-J5-tE4" imageView="BhO-J6-NTP" style="IBUITableViewCellStyleDefault" id="YXI-QL-7Ca">
+                                        <rect key="frame" x="0.0" y="24.5" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YXI-QL-7Ca" id="QnA-x6-Mp7">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Pk-J5-tE4">
+                                                    <rect key="frame" x="53" y="0.0" width="251" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="cell_checkmark" id="BhO-J6-NTP">
+                                                    <rect key="frame" x="16" y="10.5" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yf8-id-AKR" id="Z5v-2s-Q1b"/>
+                                    <outlet property="delegate" destination="Yf8-id-AKR" id="655-zf-M3r"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kn-HI-PV7">
+                                <rect key="frame" x="0.0" y="342" width="320" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Subnet Mask" id="0MD-qU-bWp">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="3Jc-f0-OwL">
+                                            <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="cancel:" destination="Yf8-id-AKR" id="HRf-3g-otZ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" style="plain" id="Ag2-A3-tkR">
+                                            <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="done:" destination="Yf8-id-AKR" id="EqR-5V-ZwU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Abo-DA-2qv"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8kn-HI-PV7" firstAttribute="leading" secondItem="Abo-DA-2qv" secondAttribute="leading" id="0MV-ii-va3"/>
+                            <constraint firstItem="aq9-Xm-YKz" firstAttribute="bottom" secondItem="D73-Ug-m9h" secondAttribute="bottom" priority="750" id="26X-eR-nuc"/>
+                            <constraint firstItem="aq9-Xm-YKz" firstAttribute="top" secondItem="8kn-HI-PV7" secondAttribute="bottom" id="IEr-MK-o27"/>
+                            <constraint firstItem="ZTg-OL-Xx4" firstAttribute="top" secondItem="Abo-DA-2qv" secondAttribute="top" id="Jbx-ta-UzE"/>
+                            <constraint firstItem="cjg-Xg-Mhy" firstAttribute="leading" secondItem="Abo-DA-2qv" secondAttribute="leading" id="LpB-RE-Fdd"/>
+                            <constraint firstItem="8kn-HI-PV7" firstAttribute="top" secondItem="ZTg-OL-Xx4" secondAttribute="bottom" id="QH6-Wh-Oh5"/>
+                            <constraint firstItem="8kn-HI-PV7" firstAttribute="trailing" secondItem="Abo-DA-2qv" secondAttribute="trailing" id="QIs-XA-jpF"/>
+                            <constraint firstItem="8kn-HI-PV7" firstAttribute="top" secondItem="cjg-Xg-Mhy" secondAttribute="bottom" id="Xdg-7B-vc3"/>
+                            <constraint firstItem="8kn-HI-PV7" firstAttribute="leading" secondItem="Abo-DA-2qv" secondAttribute="leading" id="cFN-x2-1t4"/>
+                            <constraint firstItem="8kn-HI-PV7" firstAttribute="trailing" secondItem="Abo-DA-2qv" secondAttribute="trailing" id="eYw-Fm-g5a"/>
+                            <constraint firstItem="Abo-DA-2qv" firstAttribute="trailing" secondItem="cjg-Xg-Mhy" secondAttribute="trailing" id="jUv-eU-zB1"/>
+                            <constraint firstItem="ZTg-OL-Xx4" firstAttribute="leading" secondItem="Abo-DA-2qv" secondAttribute="leading" id="lFV-lV-0aG"/>
+                            <constraint firstItem="aq9-Xm-YKz" firstAttribute="trailing" secondItem="Abo-DA-2qv" secondAttribute="trailing" id="o5v-O8-eEE"/>
+                            <constraint firstItem="ZTg-OL-Xx4" firstAttribute="trailing" secondItem="Abo-DA-2qv" secondAttribute="trailing" id="oE5-MI-tNV"/>
+                            <constraint firstItem="aq9-Xm-YKz" firstAttribute="leading" secondItem="Abo-DA-2qv" secondAttribute="leading" id="q58-wO-cMx"/>
+                            <constraint firstItem="cjg-Xg-Mhy" firstAttribute="top" secondItem="D73-Ug-m9h" secondAttribute="top" constant="320" id="sWG-Ss-W1V"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="cancelView" destination="ZTg-OL-Xx4" id="5R8-zd-Paf"/>
+                        <outlet property="done" destination="Ag2-A3-tkR" id="32q-pg-z93"/>
+                        <outlet property="dragView" destination="cjg-Xg-Mhy" id="nTO-Lu-8zv"/>
+                        <outlet property="navigationBar" destination="8kn-HI-PV7" id="ZH1-Bk-nKb"/>
+                        <outlet property="tableView" destination="aq9-Xm-YKz" id="CdO-Ya-JcC"/>
+                        <outlet property="topConstraint" destination="sWG-Ss-W1V" id="Eof-X1-WRC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CvG-gU-8C9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ymv-b7-dME">
+                    <connections>
+                        <action selector="cancel:" destination="Yf8-id-AKR" id="07s-YX-K5b"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1617" y="1630"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <resources>
+        <image name="cell_checkmark" width="22" height="22"/>
+    </resources>
+</document>

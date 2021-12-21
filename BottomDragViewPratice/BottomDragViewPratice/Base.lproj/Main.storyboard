@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ija-92-Bww">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="W2p-0F-gEf" kind="presentation" animates="NO" modalPresentationStyle="overFullScreen" id="2yZ-Sn-d7F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ija-92-Bww" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7dr-gS-rOG"/>
+                            <constraint firstItem="Ija-92-Bww" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QDr-0s-bHd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="158" y="42"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="dTq-Tw-0Jr">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3N-uJ-Lkp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="W2p-0F-gEf" customClass="SecondViewController" customModule="BottomDragViewPratice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0R0-XU-uzz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adR-Ch-EUm">
+                                <rect key="frame" x="0.0" y="73" width="414" height="247"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="lSt-rc-Fs5" appends="YES" id="a9L-s8-n3n"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVT-G5-dnQ" customClass="DragView" customModule="BottomDragViewPratice" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="320" width="414" height="22"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="bMs-5r-nzl"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nra-WH-ahj">
+                                <rect key="frame" x="0.0" y="386" width="414" height="510"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="47J-DZ-xuQ">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="47J-DZ-xuQ" id="sSe-7w-F82">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkB-LR-Lek">
+                                <rect key="frame" x="0.0" y="342" width="414" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.14901960780000001" green="0.65098039220000004" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Second View" id="Sh7-1N-a2z">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="C9T-zT-ld3">
+                                            <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="cancel:" destination="W2p-0F-gEf" id="d0z-p8-oxN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="8dC-KT-ixj">
+                                            <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="done:" destination="W2p-0F-gEf" id="ySC-ri-pdj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="neg-pn-Wta"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="nra-WH-ahj" firstAttribute="leading" secondItem="neg-pn-Wta" secondAttribute="leading" id="9B7-Ki-irk"/>
+                            <constraint firstItem="QVT-G5-dnQ" firstAttribute="trailing" secondItem="neg-pn-Wta" secondAttribute="trailing" id="Fug-nD-EZR"/>
+                            <constraint firstItem="adR-Ch-EUm" firstAttribute="trailing" secondItem="neg-pn-Wta" secondAttribute="trailing" id="Kdy-jN-21T"/>
+                            <constraint firstItem="nra-WH-ahj" firstAttribute="trailing" secondItem="neg-pn-Wta" secondAttribute="trailing" id="Mio-ij-9Er"/>
+                            <constraint firstItem="nra-WH-ahj" firstAttribute="top" secondItem="HkB-LR-Lek" secondAttribute="bottom" id="PzK-bk-d6i"/>
+                            <constraint firstItem="HkB-LR-Lek" firstAttribute="trailing" secondItem="neg-pn-Wta" secondAttribute="trailing" id="TxS-I0-4q6"/>
+                            <constraint firstItem="QVT-G5-dnQ" firstAttribute="top" secondItem="0R0-XU-uzz" secondAttribute="top" constant="320" id="W20-Ui-tTb"/>
+                            <constraint firstItem="nra-WH-ahj" firstAttribute="bottom" secondItem="0R0-XU-uzz" secondAttribute="bottom" priority="750" id="cFd-0L-DRm"/>
+                            <constraint firstItem="adR-Ch-EUm" firstAttribute="top" secondItem="neg-pn-Wta" secondAttribute="top" id="clh-rd-kZg"/>
+                            <constraint firstItem="QVT-G5-dnQ" firstAttribute="top" secondItem="adR-Ch-EUm" secondAttribute="bottom" id="kQu-Fu-1iN"/>
+                            <constraint firstItem="HkB-LR-Lek" firstAttribute="top" secondItem="QVT-G5-dnQ" secondAttribute="bottom" id="qFn-7n-QCi"/>
+                            <constraint firstItem="HkB-LR-Lek" firstAttribute="leading" secondItem="neg-pn-Wta" secondAttribute="leading" id="tBB-pu-Gq2"/>
+                            <constraint firstItem="adR-Ch-EUm" firstAttribute="leading" secondItem="neg-pn-Wta" secondAttribute="leading" id="yGl-eP-RiZ"/>
+                            <constraint firstItem="QVT-G5-dnQ" firstAttribute="leading" secondItem="neg-pn-Wta" secondAttribute="leading" id="z5f-vD-p4d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelView" destination="adR-Ch-EUm" id="bGf-Ml-4WY"/>
+                        <outlet property="dragView" destination="QVT-G5-dnQ" id="6Fa-Eu-ms4"/>
+                        <outlet property="navigationBar" destination="HkB-LR-Lek" id="w4k-ih-Vb2"/>
+                        <outlet property="topConstraint" destination="W20-Ui-tTb" id="Nnc-U7-3Cc"/>
+                    </connections>
+                </viewController>
+                <tapGestureRecognizer id="lSt-rc-Fs5">
+                    <connections>
+                        <action selector="cancel:" destination="W2p-0F-gEf" id="Bd9-Hg-h9G"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1117" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
